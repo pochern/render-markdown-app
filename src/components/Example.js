@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import marked from 'marked';
+import 'typeface-roboto';
+import Typography from '@material-ui/core/Typography';
 import ExampleData from '../data/example'
 
 class Example extends Component {
@@ -20,12 +22,14 @@ class Example extends Component {
     for (var i = 0; i<arrayLength; i++){
       rawMakeup += marked(this.state.arr[i])
     }
-    return { __html: rawMakeup}
+    return {__html: rawMakeup}
   }
   
   render() {
     return (
-      <div dangerouslySetInnerHTML={this.getMarkdownText()}/>
+      <div>
+        <Typography dangerouslySetInnerHTML={this.getMarkdownText()}></Typography>
+      </div>
     );
   }
 }
